@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/meme.png">
+    <title>??</title>
+    <style>
+        body {
+            background-color: black;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .centro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 40px;
+            background-color: rgb(20, 5, 231);
+            color: white;
+            font-size: 20px;
+            border: none; 
+            border-radius: 100px;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all .2s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #gif {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centro">
+        <button id="tocar-botao">Confie em mim</button>
+    </div>
+    <img id="gif" src="assets/picapau-dança.gif">
+    <audio id="musica" src="assets/rihana.MP3" loop preload="auto"></audio>
+
+    <script>
+        const button = document.getElementById("tocar-botao")
+        const gif = document.getElementById("gif")
+        const musica = document.getElementById("musica")
+        button.addEventListener("click", () => {
+            gif.style.display = "block";
+            musica.play();
+        });
+    </script>
+</body>
+</html>
